@@ -44,3 +44,41 @@ Inicialmente se realiza la instalación del apk en el emulador.
 Sin embargo al ejecutar el comando, se presenta un error. Averiguando el origen se establece que Calabash necesita los permisos necesarios del app para ejecutar los steps.
 
 ![Error Firma](images/ErrorFirma.png)
+
+## Decoding
+
+Se requiere en este punto decompilar el apk 
+
+![decodingAPK](images/decodingAPK.png)
+
+y convertir el empaquetado a código fuente nuevamente
+
+![originalCode](images/originalCode.png)
+
+modificar el archivo `manifest.xml` para adiciónar la línea
+
+    ...
+    <uses-permission android:name="android.permission.INTERNET"/>
+    ...
+
+![AndroidManifestModify](images/manifestModify.png)
+
+y compilar nuevamente el paquete para generar el apk. Para tal fin se ejecuta el comando
+
+    $ java -jar apktool.jar b .
+
+De esta forma, se compila el código nuevamente y genera el apk en la carpeta `dist/` de la ubicación actual.
+
+![buildAPK](images/buildApk.png)
+
+Ahora el apk está listo para ser firmado nuevamente y generar el certificado necesario para instalar la aplicación en el emulador. Para este punto se ejecuta el comando
+
+    $ calabash-android resign com.evancharlton.mileage_3110.apk
+
+Después del firmado de la aplicación, se ejecuta el comando
+
+    $ calabash-android run com.evancharlton.mileage_3110.apk
+
+Este comando, instala la aplicación en el emulador y corre el test de prueba para seleccionar la opción `Vehicles` dentro del app.
+
+![runBaseLine](images/executeBaseLine.png)

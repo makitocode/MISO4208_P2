@@ -1,5 +1,6 @@
-Feature: Login feature
+Feature: Opening vehicle option
 
   Scenario: As a valid user I can log into my app
-    When I press "History"
-    # Then I see "Welcome to coolest app ever"
+    Given I press "Vehicles"               
+    #button to remove the splash screen
+    Then I should see "Default vehicle"
