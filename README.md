@@ -23,7 +23,7 @@ Nexus 5, Sistema operativo Android Oreo versión 8.0 cpu(x86), display 1080x1920
 
 ## Estrategia
 
-Se usará para las pruebas la gema de ruby Android-calabash que facilita la escritura y la descripción de los casos de prueba usando como lenguaje o tecnología cucumber. Esto facilita enormemente las pruebas y optimiza el tiempo.
+Se usará para las pruebas la gema de ruby Android-calabash que facilita la escritura y la descripción de los casos de prueba usando como lenguaje o tecnología cucumber. Esto facilita enormemente las pruebas y optimiza el tiempo de elaboración de los escenarios de prueba.
 
 ## Desarrollo
 
