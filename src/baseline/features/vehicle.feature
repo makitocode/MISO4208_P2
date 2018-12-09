@@ -57,7 +57,3 @@ Scenario: As a valid user I can delete default car
     Then I press "OK"
     Then I don't see "Default vehicle" 
     Then I take a screenshot
-
-
-
-    
