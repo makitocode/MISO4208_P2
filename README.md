@@ -105,29 +105,26 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
 ![5](src/baseline/screenshots/screenshot_5.png)
 
-
 # Resultado de la ejecución de ls pruebas de fillup y vehicle.
 
-## Mutantes 1-14 NULL_INPUT_STREAM
+## Mutante 41-58 WRONG_MAIN_ACTIVITY
 
 **Log**
 
-    makitos-mbp:baseline makito$ calabash-android resign com.evancharlton.mileage_3110.apk
-
-    Warning:
-    The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore/Users/makito/.android/debug.keystore -destkeystore /Users/makito/.android/debug.keystore -deststoretype pkcs12".
-    makitos-mbp:baseline makito$ calabash-android run com.evancharlton.mileage_3110.apk
+    makito$ calabash-android run com.evancharlton.mileage_3110.apk
     No test server found for this combination of app and calabash version. Recreating test server.
 
     Warning:
     The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore /Users/makito/.android/debug.keystore -destkeystore /Users/makito/.android/debug.keystore -deststoretype pkcs12".
-    Done signing the test server. Moved it to test_servers/db72ec6159701bb706348b9c27866459_0.9.8.apk
+    Done signing the test server. Moved it to test_servers/17c8a370bd203945bbc45a2c1b59d2a1_0.9.8.apk
     Feature: fillup Scenarios
 
     Success
     Success
     Scenario: As a valid user I can create fillup                    # features/fillup.feature:3
         When I press "Fillup"                                          # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Timeout waiting for elements: * marked:'Fillup' (Calabash::Android::WaitHelpers::WaitError)
+        features/fillup.feature:4:in `When I press "Fillup"'
         Then I enter "9800" into input field number 1                  # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
         Then I enter "5" into input field number 2                     # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
         Then I enter "134000" into input field number 3                # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
@@ -142,9 +139,10 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
     Scenario: As a valid user I can edit fillup     # features/fillup.feature:17
         When I press "History"                        # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Timeout waiting for elements: * marked:'History' (Calabash::Android::WaitHelpers::WaitError)
+        features/fillup.feature:18:in `When I press "History"'
         Then I should see text containing "12/8/18"   # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
         Then I long press "12/8/18" and select "Edit" # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:8
-        Warning: This predefined step is deprecated.
         Then I clear input field number 2             # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:21
         Then I enter "10" into input field number 2   # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
         Then I hide the keyboard                      # features/step_definitions/calabash_steps.rb:3
@@ -157,6 +155,8 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
     Scenario: As a valid user I can create new car                      # features/vehicle.feature:3
         When I press "Vehicles"                                           # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Timeout waiting for elements: * marked:'Vehicles' (Calabash::Android::WaitHelpers::WaitError)
+        features/vehicle.feature:4:in `When I press "Vehicles"'
         Then I press the menu key                                         # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:5
         # Then I wait
         Then I press "Add new vehicle"                                    # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
@@ -180,9 +180,10 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
     Scenario: As a valid user I can edit Mazda3 car                                 # features/vehicle.feature:26
         When I press "Vehicles"                                                       # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Timeout waiting for elements: * marked:'Vehicles' (Calabash::Android::WaitHelpers::WaitError)
+        features/vehicle.feature:27:in `When I press "Vehicles"'
         Then I should see text containing "Mazda3"                                    # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
         Then I long press "Mazda3" and select "Edit"                                  # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:8
-        Warning: This predefined step is deprecated.
         # Then I press press the "Mazda3"
         Then I clear input field number 5                                             # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:21
         Then I enter "Descripción actualizada del vehículo" into input field number 5 # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
@@ -196,13 +197,17 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
     Scenario: As a valid user I set Mazda3 has default car # features/vehicle.feature:41
         When I press "Vehicles"                              # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        map * marked:'Vehicles', query failed because: java.util.concurrent.TimeoutException
+        (RuntimeError)
+        features/vehicle.feature:42:in `When I press "Vehicles"'
         Then I should see text containing "Mazda3"           # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
         Then I long press "Mazda3" and select item number 1  # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:1
-        Warning: This predefined step is deprecated.
         Then I take a screenshot                             # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
 
     Scenario: As a valid user I can delete default car    # features/vehicle.feature:47
         When I press "Vehicles"                             # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Timeout waiting for elements: * marked:'Vehicles' (Calabash::Android::WaitHelpers::WaitError)
+        features/vehicle.feature:48:in `When I press "Vehicles"'
         Then I should see text containing "Default vehicle" # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
         # Then I long press "Default vehicle" and select "Delete"
         Then I long press "Default vehicle"                 # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:15
@@ -215,9 +220,23 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
         Then I don't see "Default vehicle"                  # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:27
         Then I take a screenshot                            # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
 
-    6 scenarios (6 passed)
-    67 steps (67 passed)
-    4m13.207s
+    Failing Scenarios:
+    cucumber features/fillup.feature:3 # Scenario: As a valid user I can create fillup
+    cucumber features/fillup.feature:17 # Scenario: As a valid user I can edit fillup
+    cucumber features/vehicle.feature:3 # Scenario: As a valid user I can create new car
+    cucumber features/vehicle.feature:26 # Scenario: As a valid user I can edit Mazda3 car
+    cucumber features/vehicle.feature:41 # Scenario: As a valid user I set Mazda3 has default car
+    cucumber features/vehicle.feature:47 # Scenario: As a valid user I can delete default car
 
-No se presenta ningún Error. Los casos de prueba se ejecutan correctamente.
+    6 scenarios (6 failed)
+    67 steps (6 failed, 61 skipped)
+    4m16.536s
+
+La aplicación presenta Error desde el primer pantallazo y no puede realizar el proceso de pruebas generando errores por el main activity.
+
+## vrt
+
+![1](src/baseline/diff/diff4158_1.png)
+
+![2](src/baseline/diff/diff4158_2.png)
 
