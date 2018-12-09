@@ -87,6 +87,8 @@ Este comando, instala la aplicación en el emulador y corre el test de prueba pa
 
 Se crean los features que permiten a través de diferentes escenarios probar la creación, actualización y eliminación de vehículo y fillup.
 
+![BaseLineGif](src/baseline/FillUpTest_CalabashAndroid.gif)
+
 Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas.
 
 ---
