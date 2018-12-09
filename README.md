@@ -107,6 +107,7 @@ link del Video a las pruebas sobre la línea base
 [Video Pruebas sobre la línea base](https://youtu.be/5EKZWnkrbQ0)
 
 ---
+
 ## Oráculo
 
 La línea base de la aplicación (ORÁCULO) genera ejecutando los escenarios, los siguientes screenshots a comparar:
