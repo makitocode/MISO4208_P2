@@ -87,7 +87,7 @@ Se crean los features que permiten a través de diferentes escenarios probar la 
 
 Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas.
 
-La línea base de la aplicación genera ejecutando los escenarios, los siguientes screenshots a comparar:
+La línea base de la aplicación (ORÁCULO) genera ejecutando los escenarios, los siguientes screenshots a comparar:
 
 ### Fillup
 
@@ -240,3 +240,10 @@ La aplicación presenta Error desde el primer pantallazo y no puede realizar el 
 
 ![2](src/baseline/diff/diff4158_2.png)
 
+![3](src/baseline/diff/diff4158_3.png)
+
+![4](src/baseline/diff/diff4158_4.png)
+
+![5](src/baseline/diff/diff4158_5.png)
+
+![6](src/baseline/diff/diff4158_6.png)
