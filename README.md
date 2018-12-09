@@ -85,7 +85,31 @@ Este comando, instala la aplicación en el emulador y corre el test de prueba pa
 
 Se crean los features que permiten a través de diferentes escenarios probar la creación, actualización y eliminación de vehículo y fillup.
 
-Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas. 
+Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas.
+
+La línea base de la aplicación genera ejecutando los escenarios, los siguientes screenshots a comparar:
+
+### Fillup
+
+![0](src/baseline/screenshots/screenshot_0.png)
+
+![1](src/baseline/screenshots/screenshot_1.png)
+
+### Vehicle
+
+![2](src/baseline/screenshots/screenshot_2.png)
+
+![3](src/baseline/screenshots/screenshot_3.png)
+
+![4](src/baseline/screenshots/screenshot_4.png)
+
+![5](src/baseline/screenshots/screenshot_5.png)
+
+![6](src/baseline/screenshots/screenshot_6.png)
+
+![7](src/baseline/screenshots/screenshot_7.png)
+
+![8](src/baseline/screenshots/screenshot_8.png)
 
 # Resultado de la ejecución de ls pruebas de fillup y vehicle.
 
