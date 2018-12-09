@@ -21,11 +21,13 @@ ruby: versión 2.3.7
 AVD Manager - Android Studio
 Nexus 5, Sistema operativo Android Oreo versión 8.0 cpu(x86), display 1080x1920
 
-## Estrategia
+## Estrategia y Desarrollo
 
-Se usará para las pruebas la gema de ruby Android-calabash que facilita la escritura y la descripción de los casos de prueba usando como lenguaje o tecnología cucumber. Esto facilita enormemente las pruebas y optimiza el tiempo de elaboración de los escenarios de prueba.
+Se usará para las pruebas la gema de ruby Android-calabash que facilita la escritura y la descripción de los casos de prueba usando los steps predefinidos ahorrando tiempo y esfuerzo.
 
-## Desarrollo
+Se procede entonces a realizar pruebas E2E sobre la aplicación móvil MileAge disponible para Android.
+
+
 
 Se procede a realizar el firmado de la aplicación para su posterior instalación.
 
@@ -253,7 +255,7 @@ Cada uno de los steps generaron problemas de timeout porque no encontraba los te
     67 steps (6 failed, 61 skipped)
     4m16.536s
 
-La aplicación presenta Error desde el primer pantallazo y no puede realizar el proceso de pruebas generando errores por el main activity.
+La aplicación presenta Error desde el primer pantallazo y no puede realizar el proceso de pruebas generando errores de timeout.
 
 ## vrt
 
