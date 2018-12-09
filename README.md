@@ -105,11 +105,6 @@ La línea base de la aplicación genera ejecutando los escenarios, los siguiente
 
 ![5](src/baseline/screenshots/screenshot_5.png)
 
-![6](src/baseline/screenshots/screenshot_6.png)
-
-![7](src/baseline/screenshots/screenshot_7.png)
-
-![8](src/baseline/screenshots/screenshot_8.png)
 
 # Resultado de la ejecución de ls pruebas de fillup y vehicle.
 
