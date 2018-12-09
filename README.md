@@ -103,6 +103,9 @@ Se crean los features que permiten a través de diferentes escenarios probar la 
 
 Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas.
 
+link del Video a las pruebas sobre la línea base
+[Video Pruebas sobre la línea base](https://youtu.be/5EKZWnkrbQ0)
+
 ---
 ## Oráculo
 
