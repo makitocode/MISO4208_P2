@@ -59,6 +59,7 @@ Sin embargo al ejecutar el comando, se presenta un error. Averiguando el origen 
 
 ![Error Firma](images/ErrorFirma.png)
 
+
 ## Decoding
 
 Se requiere en este punto decompilar el apk 
