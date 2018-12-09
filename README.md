@@ -273,3 +273,136 @@ La aplicación presenta Error desde el primer pantallazo y no puede realizar el 
 
 ![6](src/baseline/diff/diff4158_6.png)
 
+---
+
+## Mutante 4263 CLOSING_NULL_CURSOR
+
+El mutante presente problemas en la interfaz de usuariosobre el feature: As a Valid User I can edit fillup.
+
+El problema generado fue de HTTPClient: KeepAliveDisconnected.
+
+    Then I clear input field number 2             # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:21
+      HTTPClient::KeepAliveDisconnected: Connection reset by peer @ io_fillbuf - fd:7  (HTTPClient::KeepAliveDisconnected)
+      features/fillup.feature:22:in `Then I clear input field number 2'
+
+
+    Failing Scenarios:
+    cucumber features/fillup.feature:17 # Scenario: As a valid user I can edit fillup
+
+    6 scenarios (1 failed, 5 passed)
+    67 steps (1 failed, 6 skipped, 60 passed)
+    1m45.554s
+
+**Log**
+
+    makitos-mbp:baseline makito$ calabash-android run com.evancharlton.mileage_3110.apk
+    No test server found for this combination of app and calabash version. Recreating test server.
+
+    Warning:
+    The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore/Users/makito/.android/debug.keystore -destkeystore /Users/makito/.android/debug.keystore -deststoretype pkcs12".
+    Done signing the test server. Moved it to test_servers/eafa52e935c96ad1fa5f2d88f6c90fe3_0.9.8.apk
+    Feature: fillup Scenarios
+
+    Success
+    Success
+    Scenario: As a valid user I can create fillup                    # features/fillup.feature:3
+        When I press "Fillup"                                          # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I enter "9800" into input field number 1                  # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "5" into input field number 2                     # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "134000" into input field number 3                # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I press view with id "date"                               # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I set the date to "08-12-2018" on DatePicker with index 1 # calabash-android-0.9.8/lib/calabash-android/steps/date_picker_steps.rb:2
+        Then I press view with id "button1"                            # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I press view with id "partial"                            # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I press view with id "save_btn"                           # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I press "History"                                         # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I take a screenshot                                       # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+        Then I should see text containing "12/8/18"                    # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+
+    Scenario: As a valid user I can edit fillup     # features/fillup.feature:17
+        When I press "History"                        # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I should see text containing "12/8/18"   # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+        Then I long press "12/8/18" and select "Edit" # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:8
+        Warning: This predefined step is deprecated.
+        Then I clear input field number 2             # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:21
+        HTTPClient::KeepAliveDisconnected: Connection reset by peer @ io_fillbuf - fd:7  (HTTPClient::KeepAliveDisconnected)
+        features/fillup.feature:22:in `Then I clear input field number 2'
+        Then I enter "10" into input field number 2   # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I hide the keyboard                      # features/step_definitions/calabash_steps.rb:3
+        Then I wait                                   # calabash-android-0.9.8/lib/calabash-android/steps/progress_steps.rb:5
+        Then I press view with id "save_btn"          # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I take a screenshot                      # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+        Then I should see text containing "10.00 g"   # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+
+    Feature: Vehicle Scenarios
+
+    Scenario: As a valid user I can create new car                      # features/vehicle.feature:3
+        When I press "Vehicles"                                           # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I press the menu key                                         # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:5
+        # Then I wait
+        Then I press "Add new vehicle"                                    # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I enter "Mazda3" into input field number 1                   # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "2019" into input field number 2                     # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "Japón" into input field number 3                    # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "Grand Touring" into input field number 4            # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I enter "Con tecnología SkyActive" into input field number 5 # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        # Then I press view with id "type"
+        # Then I press list item number 1
+        Then I scroll down                                                # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:36
+        Then I press view with id "distance"                              # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I press "Kilometers"                                         # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I scroll down                                                # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:36
+        Then I press view with id "economy"                               # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I press "Km / Gallon"                                        # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I scroll down                                                # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:36
+        Then I press view with id "save_btn"                              # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I take a screenshot                                          # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+        Then I should see text containing "Mazda3"                        # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+
+    Scenario: As a valid user I can edit Mazda3 car                                 # features/vehicle.feature:26
+        When I press "Vehicles"                                                       # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I should see text containing "Mazda3"                                    # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+        Then I long press "Mazda3" and select "Edit"                                  # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:8
+        Warning: This predefined step is deprecated.
+        # Then I press press the "Mazda3"
+        Then I clear input field number 5                                             # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:21
+        Then I enter "Descripción actualizada del vehículo" into input field number 5 # calabash-android-0.9.8/lib/calabash-android/steps/enter_text_steps.rb:9
+        Then I hide the keyboard                                                      # features/step_definitions/calabash_steps.rb:3
+        Then I wait                                                                   # calabash-android-0.9.8/lib/calabash-android/steps/progress_steps.rb:5
+        Then I scroll down                                                            # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:36
+        Then I scroll down                                                            # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:36
+        Then I press view with id "save_btn"                                          # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:13
+        Then I take a screenshot                                                      # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+        Then I should see text containing "Descripción actualizada del vehículo"      # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+
+    Scenario: As a valid user I set Mazda3 has default car # features/vehicle.feature:41
+        When I press "Vehicles"                              # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I should see text containing "Mazda3"           # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+        Then I long press "Mazda3" and select item number 1  # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:1
+        Warning: This predefined step is deprecated.
+        Then I take a screenshot                             # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+
+    Scenario: As a valid user I can delete default car    # features/vehicle.feature:47
+        When I press "Vehicles"                             # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I should see text containing "Default vehicle" # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:13
+        # Then I long press "Default vehicle" and select "Delete"
+        Then I long press "Default vehicle"                 # calabash-android-0.9.8/lib/calabash-android/steps/context_menu_steps.rb:15
+        Then I press "Edit"                                 # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I hide the keyboard                            # features/step_definitions/calabash_steps.rb:3
+        Then I wait                                         # calabash-android-0.9.8/lib/calabash-android/steps/progress_steps.rb:5
+        Then I press the menu key                           # calabash-android-0.9.8/lib/calabash-android/steps/navigation_steps.rb:5
+        Then I press "Delete"                               # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I press "OK"                                   # calabash-android-0.9.8/lib/calabash-android/steps/press_button_steps.rb:17
+        Then I don't see "Default vehicle"                  # calabash-android-0.9.8/lib/calabash-android/steps/assert_steps.rb:27
+        Then I take a screenshot                            # calabash-android-0.9.8/lib/calabash-android/steps/screenshot_steps.rb:9
+
+    Failing Scenarios:
+    cucumber features/fillup.feature:17 # Scenario: As a valid user I can edit fillup
+
+    6 scenarios (1 failed, 5 passed)
+    67 steps (1 failed, 6 skipped, 60 passed)
+    1m45.554s
+
+## VRT
+
+![4263](src/baseline/diff/diff4263.png)
