@@ -87,6 +87,9 @@ Se crean los features que permiten a través de diferentes escenarios probar la 
 
 Dichos features, se ejecutan por cada grupo de mutantes para establecer o encontrar el error en cada una de las versiones tomadas.
 
+---
+## Oráculo
+
 La línea base de la aplicación (ORÁCULO) genera ejecutando los escenarios, los siguientes screenshots a comparar:
 
 ### Fillup
@@ -105,9 +108,27 @@ La línea base de la aplicación (ORÁCULO) genera ejecutando los escenarios, lo
 
 ![5](src/baseline/screenshots/screenshot_5.png)
 
-# Resultado de la ejecución de ls pruebas de fillup y vehicle.
+---
+
+# Resultado de la ejecución de las pruebas de fillup y vehicle.
 
 ## Mutante 41-58 WRONG_MAIN_ACTIVITY
+
+El mutante presente problemas en la interfaz de usuario y siempre muestra la misma UI con errores de conexión a la bd local.
+
+Todos los casos de pruebas son ejecutados y  todos generaron problemas a la hora de validar los features.
+
+El problema generado fue de timeout.
+
+Timeout waiting for elements: * marked:'Fillup' (Calabash::Android::WaitHelpers::WaitError)
+        features/fillup.feature:4:in `When I press "Fillup"'
+        Then I enter "9800" into input field number 1
+
+map * marked:'Vehicles', query failed because: java.util.concurrent.TimeoutException
+       (RuntimeError)
+      features/vehicle.feature:42:in `When I press "Vehicles"'
+
+Cada uno de los steps generaron problemas de timeout porque no encontraba los textos requerdiso, los botones, o las condiciones necesarias para ejecutar correctamente los escenarios.
 
 **Log**
 
@@ -247,3 +268,4 @@ La aplicación presenta Error desde el primer pantallazo y no puede realizar el 
 ![5](src/baseline/diff/diff4158_5.png)
 
 ![6](src/baseline/diff/diff4158_6.png)
+
