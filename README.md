@@ -27,7 +27,19 @@ Se usará para las pruebas la gema de ruby Android-calabash que facilita la escr
 
 Se procede entonces a realizar pruebas E2E sobre la aplicación móvil MileAge disponible para Android.
 
+APLICACIÓN **MileAge**
 
+Aplicación creada para llevar el control de consumo de combustible de uno o más vehículo y realizar estadísticas de consumo, viajes, consumo por vehículo y demás donde se pueden editar desde los registros de consumo hasta el tipo de automotor pasando por el vehículo como tal.
+
+![app1](images/app1.png)
+
+![app2](images/app2.png)
+
+![app3](images/app3.png)
+
+![app4](images/app4.png)
+
+![app5](images/app5.png)
 
 Se procede a realizar el firmado de la aplicación para su posterior instalación.
 
